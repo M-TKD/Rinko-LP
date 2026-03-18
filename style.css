@@ -529,7 +529,7 @@ a {
 .photo-slot--hero-comp  { width: 48%; height: 180px; flex-shrink: 0; border-radius: 8px; overflow: hidden; }
 .photo-slot--workout    { height: 130px; border-radius: 6px; overflow: hidden; }
 .photo-slot--portrait   { width: 42%; flex-shrink: 0; height: 260px; border-radius: 12px; overflow: hidden; }
-.photo-slot--full       { height: auto; background: #111; }
+.photo-slot--full       { height: auto; min-height: 300px; background: #111; }
 .photo-slot--full img   { height: auto; object-fit: contain; object-position: center; }
 .photo-slot--studio     { height: 240px; }
 
@@ -707,19 +707,23 @@ a {
 .trainer-profile-row {
   display: flex;
   gap: 16px;
-  align-items: flex-start;
+  align-items: stretch;
   padding: 0 16px 20px;
 }
 
 .trainer-bio {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
 }
 
 .trainer-name {
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
   color: var(--hot-pink);
-  margin-bottom: 12px;
+  margin-bottom: 0;
   line-height: 1;
 }
 

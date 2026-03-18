@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <radialGradient id="bg1" cx="40%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#3a3a4a"/>
+      <stop offset="100%" stop-color="#1a1a24"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF1E8E" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FF1E8E" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="400" height="300" fill="url(#bg1)"/>
+
+  <!-- ボケた床のライン -->
+  <ellipse cx="200" cy="260" rx="220" ry="30" fill="#2a2a35" filter="url(#blur1)"/>
+
+  <!-- グロー -->
+  <ellipse cx="160" cy="200" rx="120" ry="80" fill="url(#glow)" filter="url(#blur1)"/>
+
+  <!-- ダンベル（左・手前・大きく） -->
+  <g filter="url(#shadow)" transform="translate(60,140) rotate(-20)">
+    <!-- シャフト -->
+    <rect x="0" y="18" width="160" height="14" rx="7" fill="#888"/>
+    <rect x="0" y="18" width="160" height="14" rx="7" fill="url(#metalGrad)"/>
+    <!-- 左プレート -->
+    <rect x="-18" y="4" width="22" height="42" rx="5" fill="#555"/>
+    <rect x="-10" y="8" width="8" height="34" rx="3" fill="#444"/>
+    <rect x="-26" y="8" width="22" height="34" rx="5" fill="#666"/>
+    <!-- 右プレート -->
+    <rect x="156" y="4" width="22" height="42" rx="5" fill="#555"/>
+    <rect x="162" y="8" width="8" height="34" rx="3" fill="#444"/>
+    <rect x="156" y="8" width="22" height="34" rx="5" fill="#666"/>
+    <!-- ハイライト -->
+    <rect x="5" y="20" width="150" height="4" rx="2" fill="#aaa" opacity="0.5"/>
+  </g>
+
+  <!-- ダンベル（右・奥・小さく・ぼかし） -->
+  <g filter="url(#blur1)" transform="translate(220,170) rotate(15) scale(0.65)" opacity="0.7">
+    <rect x="0" y="18" width="140" height="12" rx="6" fill="#777"/>
+    <rect x="-16" y="4" width="20" height="40" rx="4" fill="#555"/>
+    <rect x="136" y="4" width="20" height="40" rx="4" fill="#555"/>
+  </g>
+
+  <!-- 床の反射 -->
+  <ellipse cx="160" cy="255" rx="80" ry="8" fill="#FF1E8E" opacity="0.08" filter="url(#blur1)"/>
+
+  <!-- テキストオーバーレイ（薄く） -->
+  <text x="20" y="285" font-family="sans-serif" font-size="11" fill="#ffffff" opacity="0.35" letter-spacing="3">TRAINING</text>
+
+  <defs>
+    <linearGradient id="metalGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#aaa"/>
+      <stop offset="50%" stop-color="#777"/>
+      <stop offset="100%" stop-color="#555"/>
+    </linearGradient>
+  </defs>
+</svg>
