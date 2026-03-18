@@ -1,0 +1,953 @@
+/* ===== CSS変数 ===== */
+:root {
+  --hot-pink: #FF1E8E;
+  --mint: #8ECFB2;
+  --mint-dark: #5fb899;
+  --coral: #F4907A;
+  --coral-dark: #e07460;
+  --bg-pink: #FFF0F5;
+  --bg-mint: #F0FAF5;
+  --bg-peach: #FDF5F0;
+  --text-dark: #333333;
+  --text-mid: #666666;
+  --text-light: #999999;
+  --line-green: #06C755;
+  --line-green-dark: #05a847;
+  --white: #ffffff;
+  --max-w: 600px;
+  --header-h: 60px;
+  --sticky-h: 72px;
+}
+
+/* ===== リセット ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text-dark);
+  background: #fff;
+  overflow-x: hidden;
+  padding-top: var(--header-h);
+  padding-bottom: var(--sticky-h);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== 共通レイアウト ===== */
+.section-center {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  background: #fff;
+}
+
+.section-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== セクション見出し ===== */
+.section-heading {
+  text-align: center;
+  padding: 40px 20px 16px;
+}
+
+.script-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: var(--mint-dark);
+  display: block;
+  line-height: 1.2;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* ===== 固定ヘッダー ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 30, 142, 0.12);
+  height: var(--header-h);
+}
+
+.header-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.header-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--hot-pink);
+  letter-spacing: 0.05em;
+}
+
+/* ===== CTAボタン共通 ===== */
+.cta-box {
+  padding: 20px 16px 28px;
+  background: #fff;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  border: none;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.btn:active {
+  transform: scale(0.97);
+  filter: brightness(0.95);
+}
+
+/* ヘッダーボタン */
+.btn-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--hot-pink);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(255, 30, 142, 0.35);
+}
+
+/* メインCTAボタン */
+.btn-primary {
+  width: 100%;
+  padding: 14px 20px 16px;
+  background: linear-gradient(135deg, #F4907A 0%, #FF1E8E 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(255, 30, 142, 0.4), 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 24px rgba(255, 30, 142, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-label-small {
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.92;
+  letter-spacing: 0.03em;
+}
+
+.btn-label-main {
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+/* スティッキーCTAボタン */
+.btn-sticky {
+  width: 100%;
+  flex-direction: row;
+  gap: 10px;
+  padding: 16px 24px;
+  background: var(--line-green);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 -2px 12px rgba(6, 199, 85, 0.3);
+}
+
+.btn-sticky:hover {
+  background: var(--line-green-dark);
+}
+
+/* LINEアイコン */
+.line-icon {
+  flex-shrink: 0;
+}
+
+/* ===== ヒーローセクション ===== */
+.section-hero {
+  background: #fff;
+}
+
+.section-hero .cta-box {
+  background: #fff;
+  padding: 24px 16px 32px;
+}
+
+/* ===== キャンペーンセクション ===== */
+.section-campaign {
+  background: #fffdf8;
+}
+
+/* ===== トレーナー紹介 ===== */
+.section-trainer {
+  background: var(--bg-mint);
+}
+
+/* ===== スタジオ設備 ===== */
+.section-studio {
+  background: var(--bg-peach);
+}
+
+/* ===== 料金プランセクション ===== */
+.section-price {
+  background: var(--bg-mint);
+}
+
+.section-price .section-center {
+  background: var(--bg-mint);
+}
+
+.price-desc {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+  padding: 0 20px 28px;
+}
+
+.price-table-wrap {
+  padding: 0 16px;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.price-table thead tr {
+  background: var(--mint);
+  color: #fff;
+}
+
+.price-table th {
+  padding: 12px 8px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.price-table td {
+  padding: 14px 10px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  color: var(--text-mid);
+}
+
+.price-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.price-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.price-highlight {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-left: 4px solid var(--coral);
+}
+
+.price-highlight-trial {
+  border-left-color: var(--hot-pink);
+}
+
+.price-highlight-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  gap: 12px;
+}
+
+.price-highlight-label {
+  font-size: 0.88rem;
+  color: var(--coral);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.price-highlight-trial .price-highlight-label {
+  color: var(--hot-pink);
+}
+
+.price-highlight-label small {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-light);
+}
+
+.price-highlight-value {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.price-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  padding: 10px 20px 4px;
+}
+
+/* ===== 予約フロー ===== */
+.section-flow {
+  background: var(--bg-mint);
+}
+
+.section-flow .section-center {
+  background: var(--bg-mint);
+}
+
+/* ===== アクセスセクション ===== */
+.section-access {
+  background: #fff;
+}
+
+.access-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 16px 24px;
+  width: calc(100% - 32px);
+}
+
+.access-table th,
+.access-table td {
+  padding: 16px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.access-table th {
+  width: 90px;
+  color: var(--mint-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.access-table td {
+  color: var(--text-dark);
+}
+
+.map-wrap {
+  margin: 0 16px 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+}
+
+.map-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border: 0;
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  background: #2a2a2a;
+  color: #ccc;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--hot-pink);
+  margin-bottom: 8px;
+}
+
+.footer-address {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.footer-line-link {
+  display: inline-block;
+  background: var(--line-green);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  transition: background 0.15s;
+}
+
+.footer-line-link:hover {
+  background: var(--line-green-dark);
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: #777;
+}
+
+/* ===== スティッキーCTA ===== */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  padding: 10px 16px 10px;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(6, 199, 85, 0.2);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sticky-cta.visible {
+  transform: translateY(0);
+}
+
+/* ===== セクション間区切り ===== */
+.section-hero,
+.section-campaign,
+.section-trainer,
+.section-studio,
+.section-price,
+.section-flow,
+.section-access {
+  position: relative;
+}
+
+/* ===== アニメーション（フェードイン） ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================================
+   写真スロット（プレースホルダーシステム）
+   ===================================================== */
+.photo-slot {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #e8e8e8;
+  display: block;
+}
+
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* プレースホルダー表示（画像読み込み失敗時） */
+.photo-slot.is-placeholder::after {
+  content: attr(data-label);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-line;
+  position: absolute;
+  inset: 0;
+  color: #aaa;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  padding: 12px;
+  background: linear-gradient(135deg, #ebebeb 0%, #e0e0e0 100%);
+}
+
+/* 写真スロットのサイズ定義 */
+.photo-slot--hero-main  { height: 380px; }
+.photo-slot--hero-comp  { width: 48%; height: 180px; flex-shrink: 0; border-radius: 8px; overflow: hidden; }
+.photo-slot--workout    { height: 130px; border-radius: 6px; overflow: hidden; }
+.photo-slot--portrait   { width: 42%; flex-shrink: 0; height: 260px; border-radius: 12px; overflow: hidden; }
+.photo-slot--full       { height: 260px; }
+.photo-slot--studio     { height: 240px; }
+
+/* =====================================================
+   ヒーローセクション（HTML版）
+   ===================================================== */
+
+/* ミントトップバー */
+.hero-topbar {
+  background: var(--mint);
+  color: #fff;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  padding: 8px 16px;
+}
+
+/* バッジ行 */
+.hero-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #fff;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--hot-pink);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.hero-badge strong { font-size: 1rem; }
+
+.hero-vertical-text {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  writing-mode: vertical-rl;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+/* ヒーロー写真テキストオーバーレイ */
+.hero-text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px 16px;
+  background: linear-gradient(transparent 0%, rgba(0,0,0,0.45) 100%);
+}
+
+/* プレースホルダー時もオーバーレイを表示 */
+.photo-slot--hero-main.is-placeholder .hero-text-overlay {
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.25) 100%);
+}
+
+.hero-sub-copy {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+.hero-headline {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--hot-pink);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.5), 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* インフォカード */
+.hero-info-card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: var(--bg-pink);
+  border-top: 2px solid var(--hot-pink);
+  padding: 14px 16px;
+  gap: 12px;
+}
+
+.hero-info-left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.hero-silhouette {
+  font-size: 2.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.hero-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-trainer-label {
+  font-size: 0.68rem;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+.hero-trainer-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--hot-pink);
+  line-height: 1;
+}
+
+.hero-trainer-course {
+  font-size: 0.72rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+.hero-trainer-price {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.hero-trainer-price strong {
+  font-size: 1.05rem;
+  color: var(--hot-pink);
+}
+
+/* ハッシュタグ */
+.hero-hashtags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.hero-hashtags span {
+  font-size: 0.8rem;
+  color: var(--text-mid);
+}
+
+/* ワークアウト 3カラムグリッド */
+.hero-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  background: #fff;
+  padding: 4px;
+}
+
+/* =====================================================
+   トレーナー紹介セクション（HTML版）
+   ===================================================== */
+.section-trainer .section-center {
+  background: var(--bg-mint);
+}
+
+.trainer-profile-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 0 16px 20px;
+}
+
+.trainer-bio {
+  flex: 1;
+}
+
+.trainer-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: var(--hot-pink);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.trainer-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trainer-features li {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.trainer-features li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: var(--mint-dark);
+  font-size: 0.6rem;
+  top: 4px;
+}
+
+.trainer-desc {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  padding: 0 16px 20px;
+  text-align: justify;
+}
+
+/* 実績バー */
+.trainer-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--hot-pink);
+  padding: 20px 12px;
+  gap: 4px;
+}
+
+.trainer-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  padding: 0 4px;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.trainer-stat:last-child { border-right: none; }
+
+.stat-num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.stat-num small {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* =====================================================
+   スタジオ設備セクション（HTML版）
+   ===================================================== */
+.section-studio .section-center {
+  background: var(--bg-peach);
+}
+
+/* スタジオ写真上のオーバーレイ見出し */
+.studio-heading-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+}
+
+.script-label--light {
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+
+.studio-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  letter-spacing: 0.05em;
+}
+
+/* スタジオ写真プレースホルダー時のオーバーレイ */
+.photo-slot--studio.is-placeholder .studio-heading-overlay .script-label--light {
+  color: var(--mint-dark);
+  text-shadow: none;
+}
+.photo-slot--studio.is-placeholder .studio-title {
+  color: var(--text-dark);
+  text-shadow: none;
+}
+
+/* 設備ポイントカード */
+.studio-points {
+  padding: 20px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.point-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--coral);
+}
+
+.point-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  background: var(--coral);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.point-badge span {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.point-badge strong {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.point-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.point-text {
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* =====================================================
+   デスクトップ対応 ===== */
+@media (min-width: 640px) {
+  .section-center {
+    box-shadow: 0 0 40px rgba(0,0,0,0.08);
+  }
+
+  body {
+    background: #f5f5f5;
+  }
+
+  .site-header {
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .sticky-cta {
+    max-width: var(--max-w);
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    border-radius: 16px 16px 0 0;
+    right: auto;
+    width: var(--max-w);
+  }
+
+  .sticky-cta.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .section-hero,
+  .section-campaign,
+  .section-trainer,
+  .section-studio,
+  .section-price,
+  .section-flow,
+  .section-access {
+    background: #f5f5f5;
+  }
+
+  .section-price .section-center,
+  .section-flow .section-center {
+    background: var(--bg-mint);
+  }
+}
+
+/* ===== アクセシビリティ：フォーカス ===== */
+.btn:focus-visible,
+.footer-line-link:focus-visible {
+  outline: 3px solid var(--hot-pink);
+  outline-offset: 3px;
+}
+
+/* ===== セーフエリア対応（iPhone） ===== */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .sticky-cta {
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+  body {
+    padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom));
+  }
+}
