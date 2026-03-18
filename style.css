@@ -529,7 +529,8 @@ a {
 .photo-slot--hero-comp  { width: 48%; height: 180px; flex-shrink: 0; border-radius: 8px; overflow: hidden; }
 .photo-slot--workout    { height: 130px; border-radius: 6px; overflow: hidden; }
 .photo-slot--portrait   { width: 42%; flex-shrink: 0; height: 260px; border-radius: 12px; overflow: hidden; }
-.photo-slot--full       { height: 260px; }
+.photo-slot--full       { height: auto; background: #111; }
+.photo-slot--full img   { height: auto; object-fit: contain; object-position: center; }
 .photo-slot--studio     { height: 240px; }
 
 /* =====================================================
