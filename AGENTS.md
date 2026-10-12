@@ -2,8 +2,7 @@
 
 - 案件: RINKO LP 制作・運用
 - リポジトリ: `M-TKD/Rinko-LP`（main 直コミット運用の小規模LP）
-- ⚠ remote URL に PAT が埋め込まれていた（2026-07 監査で検出）。2026-10-12 に remote URL からは除去済み。
-  GitHub上でのPAT失効（revoke）は要武田対応
+- remote URL に埋め込まれていた PAT（2026-07 監査で検出）は、2026-10-12 に remote URL から除去し、GitHub上でも失効済み
 
 ## 作業ルール
 - ファイル名: `YYYYMMDD_RINKO_種類_説明`
